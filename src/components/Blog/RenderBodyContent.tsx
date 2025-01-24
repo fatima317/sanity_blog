@@ -1,4 +1,4 @@
-import {client} from "@/sanity/lib/client";
+import config from "@/sanity/config/client-config";
 import { Blog } from "@/types/blog";
 import { PortableText } from "@portabletext/react";
 import { getImageDimensions } from "@sanity/asset-utils";
@@ -15,7 +15,7 @@ const ImageComponent = ({ value, isInline }: any) => {
     <div className="my-10 overflow-hidden rounded-[15px]">
       <Image
         src={
-          urlBuilder(client)
+          urlBuilder(config)
             .image(value)
             .fit("max")
             .auto("format")
